@@ -1,0 +1,88 @@
+{
+ "at_utc": "2026-10-26T13:30:43+00:00",
+ "event": "0002 post-amendment: seal-log lines 29-31 written 2026-10-26T13:28:56Z by seal-amendment-writer-v2 (owner-approved step C)",
+ "files": {
+  "entry2-seal/HELDOUT_PROTOCOL.md": {
+   "bytes": 9057,
+   "sha256": "8ca19041f3c44afdc04ab254f7148414b589a18fc40bc8e19f3e049f2541e479"
+  },
+  "entry2-seal/build_sweep.py": {
+   "bytes": 6052,
+   "sha256": "29de3b32737d9548f09c5249ae4aab33ff724286fce001ebce61ed740a7c7abb"
+  },
+  "entry2-seal/score_heldout.py": {
+   "bytes": 7064,
+   "sha256": "bde791698f0e610da59bc514d507a00e1baedcadc8375f7b0edab4dc13cb0a69"
+  },
+  "entry2-seal/seal_guard.py": {
+   "bytes": 9137,
+   "sha256": "9678a1bb6eb6c1ae141b580c02bb459b7a550ea8efad832f98579a06764e51ec"
+  },
+  "entry2-seal/task1_seal_fy2024.py": {
+   "bytes": 16248,
+   "sha256": "d754ba298e233df8fa61032b0fdf4117e71ba5424bfe99278bf0428e96962470"
+  },
+  "entry2-seal/witness_record.py": {
+   "bytes": 3437,
+   "sha256": "3cf6e0b9c7c2278ce9e9b1074c873f8d48cb45859bc5d08e1a5ae2b7ac9659b6"
+  },
+  "entry2-seal/write_seal_amendments.py": {
+   "bytes": 6495,
+   "sha256": "0b23ca890b26f9f7cff8c533bc9af31ee55e5b02cd4bdeab79e7fd043287bc41"
+  },
+  "volume/SEAL_AMENDMENTS.jsonl": {
+   "bytes": 38616,
+   "sha256": "b1abcd7f6b11ae5b9fe19f6e644dcd2d8cb9a991f7c190882a8b52649e4241cb"
+  },
+  "volume/SEAL_AMENDMENTS.jsonl.bak-2026-10-26T132856Z": {
+   "bytes": 34104,
+   "sha256": "8ed50b2766c2db960d06dd992167dafdd46e2b67242f5cd162008389550de491"
+  },
+  "volume/SEAL_MANIFEST.json": {
+   "bytes": 1945,
+   "sha256": "db156b5fc8d63d226a5720bf278c1c2ec9bebe86545b4cb4ef182d7d45e0ae17"
+  },
+  "volume/SEAL_RECORD.json": {
+   "bytes": 1896,
+   "sha256": "fbab322cc0e458dae1d4d8d92e2ce2979f5ba03a041e25748e4275851401495e"
+  },
+  "volume/eval_run_1/report.json": {
+   "bytes": 1265,
+   "sha256": "b43bbbaf2a1748e16c95f74b643e6797d629d2c1cfe4139421d9bd6857a6b0ca"
+  },
+  "volume/eval_run_1/score.json": {
+   "bytes": 462,
+   "sha256": "2d2dc7e554f480be76cd79ddb727efba92ac7c212f46055f975fbc00da98da2d"
+  },
+  "volume/eval_run_1/score.stderr.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "volume/fileA_original_20260707_rcdc_2008_2025_nitrd_all_ai_subcats.csv": {
+   "bytes": 3070954,
+   "sha256": "fa6940d2bfa4f2445e0eaee3eadf2c173dd69d03a0552e28cb8fe09ec2488830"
+  },
+  "volume/heldout_fileA_fy2025_214_projects.csv": {
+   "bytes": 67798,
+   "sha256": "cbeab03e64f2dbc71a56caa68910dfabfb37dd6422284b1825ab462432b673ef"
+  },
+  "volume/task1_fy2024/TASK1_SEAL_RECORD.json": {
+   "bytes": 325,
+   "sha256": "f95b47cf6a6872ff122c3806a9a5b0a427fd83164db02acdcf7ce9bfa067be67"
+  },
+  "volume/task1_fy2024/key.csv": {
+   "bytes": 7933561,
+   "sha256": "81350a5328ceb485eb41c7095765c3a7f2d5f8f648cc7b2159610b8bf52efc02"
+  },
+  "volume/task1_fy2024/task1_fy2024_seal_manifest.json": {
+   "bytes": 9698,
+   "sha256": "ae63372d8e34402aeb2e5f2c7338530cbf106a059b6a0fe74461e8e2f33b9b41"
+  }
+ },
+ "seal_log": {
+  "last_line_sha256": "68f6ff6fe90c01d79dc7e4d1f02043d63c677d9b695f39964345c6b52b068c0f",
+  "lines": 31,
+  "sha256": "b1abcd7f6b11ae5b9fe19f6e644dcd2d8cb9a991f7c190882a8b52649e4241cb"
+ },
+ "witness_id": "seal-witness-v1-2026-10-25"
+}
