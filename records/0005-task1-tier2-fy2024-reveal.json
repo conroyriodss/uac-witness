@@ -1,0 +1,39 @@
+{
+ "witness_id": "seal-witness-v1-2026-10-25",
+ "record": "0005",
+ "kind": "reveal (Task 1 Tier 2 / 2x, FY2024)",
+ "at_utc": "2026-11-04T19:45:00+00:00",
+ "event": "0005 reveal: the FY2024 sealed key and has_any_category supplement were opened once by task1-fy2024-score-v1 (2026-11-04T19:39:35Z) and scored against the frozen rankings; results committed in uac-nitrd faadcd2",
+ "preregistration": {"id": "task1-prereg-v1-2026-11-04T18:00:50Z", "sha256": "c770a502777725545f9cff5130e329fe83bb003c39f3c11f61beb0e0259a0280", "witness": "records/0004-task1-preregistration-freeze.json"},
+ "order_of_events_utc": [
+  ["2026-11-04T17:54:25Z", "FY2026 category-329 count 0 (Tier 1 still blind)"],
+  ["2026-11-04T17:59:57Z", "arm A FY2024 ranking committed (5e3bfa4, freeze run)"],
+  ["2026-11-04T18:03:05Z", "pre-registration committed (8409dc3)"],
+  ["2026-11-04T18:40:50Z", "has_any_category supplement sealed; hash logged at seal-log line 34 (18:41:16Z)"],
+  ["2026-11-04T19:26:18Z", "arm B FY2024 ranking written from text only; committed f8385bc"],
+  ["2026-11-04T19:39:35Z", "key + supplement opened by the scoring run (only opening)"],
+  ["2026-11-04T19:42:25Z", "results committed (faadcd2)"]
+ ],
+ "sealed_inputs": {
+  "key.csv": {"sha256": "81350a5328ceb485eb41c7095765c3a7f2d5f8f648cc7b2159610b8bf52efc02", "pinned_by": "docs/seal/task1_fy2024_seal_manifest.json (2026-10-25)"},
+  "has_any_category.csv": {"sha256": "5639acfaa2246953c853549b9e87cf8ccb72756480346b271fc2a31580493f5f", "pinned_by": "seal-log line 34"}
+ },
+ "rankings": {
+  "A": {"path": "build/task1_fy2024_ranking_v1/ranking.csv.gz", "sha256": "e49e844d1ebf43691cf3d66ef70f7c415d7dd50f1deccac845709cd656ffa8dd", "commit": "5e3bfa4485a9b1bb0af018b30fd7329bcb89ef16"},
+  "B": {"path": "build/task1_fy2024_armb_ranking_v1/ranking.csv.gz", "sha256": "5d8e213537f9938b4658245ae58ff97d66a1de7f4ecbe1ed812945246534b45b", "commit": "f8385bc"}
+ },
+ "files": {
+  "uac-nitrd/build/task1_fy2024_score_v1/report.json": {"sha256": "2fc574fe781fb2fedcc05319c97c3714ed7d3201ac1989ca5dd9480c5c891e11"},
+  "uac-nitrd/build/task1_fy2024_score_v1/READ_MANIFEST.json": {"sha256": "b7cfb971ec6aa1c72d2f4c29a7605b09364c4693af012e815bf5f24dfaf48e7d"},
+  "uac-nitrd/build/task1_fy2024_score_v1/under_capture_tier2.csv": {"sha256": "f39ed7f49a4b1e29f7c16f60372432a2e85074199f1474294ea42850bc0145c7"},
+  "uac-nitrd/build/task1_fy2024_score_v1/disagreement_tier2.csv.gz": {"sha256": "4507768110ec81455feaec54aa4e56f835aa7ef90983c4ef52bd751904f7547a"}
+ },
+ "headline": {
+  "criterion": "arm A, Tier 2 (non-File-A, blind), recall at K >= 0.90",
+  "result": "PASS",
+  "recall": 0.9344, "recall_ci95_core_bootstrap": [0.9213, 0.9477],
+  "k": 7399, "universe": 64065, "review_burden": 0.1155,
+  "precision_primary": 0.2871, "kappa_primary": 0.4161, "kappa_primary_ci95": [0.4002, 0.4313]
+ },
+ "refs": {"uac-nitrd_main": "faadcd2379ad1bf4ee3e459bbdd1460e654ac90f", "code": "tools/score_task1_fy2024_v1.py + workflow/reveal_metrics.py at 02f95d1"}
+}
