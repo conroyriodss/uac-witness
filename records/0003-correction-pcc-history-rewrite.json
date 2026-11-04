@@ -1,0 +1,92 @@
+{
+ "witness_id": "seal-witness-v1-2026-10-25",
+ "record": "0003",
+ "kind": "correction (append-only; records 0001 and 0002 are unchanged)",
+ "at_utc": "2026-11-04T16:41:01+00:00",
+ "event": "0003 correction: single sanctioned history rewrite of github.com/conroyriodss/uac-nitrd to remove the non-public PCC column from the FY2025 UAC fixture (owner decision 2026-11-04)",
+ "reason": "PCC (Program Class Code) is not public data; the hackathon scope is publicly available data only. The engine never read PCC (allow-list: Appl ID, FY, Project Number, SubProj).",
+ "rewrite": {
+  "date_utc": "2026-11-04",
+  "tool": "git-filter-repo --preserve-commit-hashes --blob-callback",
+  "scope": "one blob replaced in every commit; every other blob, author, committer, date and message byte-identical (verified per commit before the push)",
+  "only_rewrite": true,
+  "pushed_utc": "before 2026-11-04T16:21:46Z (CI run created then; force-with-lease; build-sweep success on the new tip)"
+ },
+ "fixture": {
+  "path": "fixtures/UAC_Uncoded_12-01-2025-updated-NIH_ODSS.csv",
+  "superseded_sha256": "8c92c8af62b65b9a48b913c83d4c9f61f6f8956b84f0ceede9ba1eb1067edb9c",
+  "corrected_sha256": "73c87d5ab8dfd9dfe785e499e7af7239a823227923413d4e8c7ba0193c89f480",
+  "superseded_git_blob": "7801dbdf2d198cca3aef29c09af46c22d8b5edf9",
+  "corrected_git_blob": "b6a4cb838e6bad6056ea745b3831143e51455dd0",
+  "change": "column PCC removed (13 -> 12 columns); rows, other columns, BOM and CRLF unchanged"
+ },
+ "refs": {
+  "main": {
+   "old": "2d7654115be8188c69146301ad5c75f72a815803",
+   "new_rewritten": "9d1cf0ab6bc787cc64c53c392cea560025c7b601",
+   "new_tip": "3e22e773402bd0ee2321873bef5401705c87ea1e",
+   "new_tip_note": "forward commit fixture-correction-v1 on top of the rewritten history (docs/FIXTURE_CORRECTION_v1.json)"
+  },
+  "tag uac-nitrd-freeze-v1": {
+   "old_tag_object": "6bb2f1e9475546f56e9c6dfd453fcc46e708f5e6",
+   "new_tag_object": "6deea49e3a1e062e2137edf03fc9497cf5cf2b4f",
+   "old_commit": "b0ccbe65b6f658f692a1e0ae427628c1ba439f72",
+   "new_commit": "f945869d69d49f013ed6840c175ef791c075e532",
+   "tag_body": "unchanged (same tagger, date, message)"
+  }
+ },
+ "frozen_records_kept": "docs/REVEAL_CONSTANTS.json, docs/TASK1_MATCH_RULE_v3.md, docs/TASK1_MATCH_RULE_v4.md unchanged; they still cite the superseded fixture hash; docs/FIXTURE_CORRECTION_v1.json maps it.",
+ "pre_push_checks": {
+  "pcc_values_whole_word_any_text_or_decompressed_gz_blob": 0,
+  "pcc_header_in_fixture_versions": 0,
+  "non_fixture_trees_identical": "43/43"
+ },
+ "residual": "Old commits may remain reachable by SHA on GitHub until GitHub Support purges them (request filed separately); the local workspace clone was re-pointed and its old objects pruned on 2026-11-04.",
+ "commit_map_count": 43,
+ "commit_map_format": "[old_commit, new_commit], oldest first (commit time); subjects unchanged (see git log)",
+ "commit_map": [
+  ["31b9135d16f0d4dc5b46668406b3c6a2b619bc0e", "c69c2fdd5798636cdf54c3e7f00033ba2c7d71c4"],
+  ["856762eb9940d2df3ac158096548682a3d080f25", "59b6e36c7cba1b28a68f5b035cf6813b20683ab2"],
+  ["44318c2d07e61fce3de7b11b8375437ffdc9f9b8", "2da09460bf2abd7993b54bf28b987041fcb8f8a7"],
+  ["5f29f5615d714e8faf22f3fa6b50d55237e47247", "a98b3f167f692151518497b7220ef0e902d3dec7"],
+  ["641d64041a32010f4879d1bc41d2305a69c1dc5c", "ef74e4f897fd3d6be3773ae4c45b9691f70566c8"],
+  ["de759cb5770b8315589670899b3eeed4f36535eb", "21dfc15e9735334f581643c5befc7d4fc01398ed"],
+  ["878369437c9142e61d93c2051619041951e2f446", "cf0837d1c9e848e5372d1220e390f2d69408f699"],
+  ["b41a59976c207f5ee906b19ac29c5fa67db460eb", "5fddeb2051fd148195f67ebd11a9ce40de1c4fd4"],
+  ["4e0c211af16354c05e3ada1e8f65f417eeefe3db", "07148a167aa0d5de9de45105eb0ed8abcbe460ff"],
+  ["a2b99f910db9869dae93cfec24dd14be0809d2f0", "145a6d44c248b7a4ef21e48203ae275fea31ac1d"],
+  ["bf23ab4e66244798ad75a2a025b8ecfeca7803ac", "d50070794a03f6774468ff345875738d578c0515"],
+  ["0553f5edad903eaf7a5398dd75de8cf50e0e148c", "d1eb45e04c49c682caa3afa259a01f6a5040ad10"],
+  ["d7bb1c3747913fe254a7397acabc1d7760c6885f", "c2eb5874eae5e4b9f19ad09b2cb04f67e2f446af"],
+  ["aa8980bde9b6bac9a247a0c19e506a95f72298d4", "87da212eaaa9977062d44d3538ec7208e1d85264"],
+  ["9c02bd2773f64bd60868cdd59fb9f1293767da50", "95ccb665490ccaf10dbeb2a1ad6a9d3620880188"],
+  ["499442f93e577d34a054961179506338491c9a72", "f1b749d7db1009abe1991b1c4ef1a72a2024f20a"],
+  ["f00931a78cc916fbb802a792c934ba98b37ab6ec", "78b80b83f5fd42dd052a656a658c5dda5bf04271"],
+  ["106597a091dcf64d29faa4dbdb883ef8a0d42248", "0b9a1a6c167bb389c402f6badb92f5fe42559a4f"],
+  ["582f4d67a75e98d7427e7000bfb644982c529539", "10f9c375956172b540862cf593341140665d4b68"],
+  ["80da1e54995492f4b3bdeea071d1026217b06fb8", "e5df67be50638548c52d106f5b025e5fc1ad413a"],
+  ["f664dac7646d84d3c044847ff0a69de9a253b74d", "60e498a5d0e5a6d325ca98b0ea88b1fb06213635"],
+  ["38d5d7d91d46d4b58d878e4c42a14117b8f6bc19", "1d2017bb16a89f48159f60a6d8edba89c6d9c8a8"],
+  ["b0ccbe65b6f658f692a1e0ae427628c1ba439f72", "f945869d69d49f013ed6840c175ef791c075e532"],
+  ["6fdc57fcafc4ba50cbdfd8ba3351b48830a713d6", "1346b63bd336c54826cfa2ccb070efa9488f5758"],
+  ["47e02dc25986bb9c17f6be7e5d778ef8f6ac9abe", "31a0edd467ee2bff55b88b2a14bf6ba24bd525a5"],
+  ["64a0b6a234b86343a4f0fb67bdaee9d32c21c230", "5d1787f6d5cfd10aa65f9bbf245e1dfe714251f5"],
+  ["8b16a9d2a443a726b4bcbf857c8184b372f4d1ed", "2418a58c8687741648bb459425224a35e90604e1"],
+  ["6c7aa809d438b279a746a9a647809bb924765c6e", "516f62bb6fe1c9f4fb6b0b13b647ffae631fa8fd"],
+  ["1b81fdd0d33b18cc77518a584270c4355557d0c6", "d8c5a56f3c0cb8a1a42dc9fa2ffaab7b2686492d"],
+  ["9181f03b1dbe9cf5c102638c12ba5d5baa97ce63", "eb9f9f93e9825587111d1d8f61f9e3c14bbce948"],
+  ["1b08644bfd4fa849ebafaf664e174a34e1520186", "19689a22a93144500ce09d6d182bbb06d24e7aa9"],
+  ["a5c9b9c826cf0051df6ef6352054875707b13657", "842c822568e537cc2df2c73068944e202061acc4"],
+  ["ff7fba2a63586be27d25249adb348ed28c5672a2", "bca69d41d1d4b64c86c0f2d41b3f03b85ebc555e"],
+  ["d1b7e4bd3c42480d4171e2480ba8b2a313eb60f6", "585e7d4d062a360e6412e75362106c9894ac01fc"],
+  ["39825ba49f0b16cd7221dd4a6c227a70d00fdca7", "18780ed6ce8d6b7d499ca971e47e2520a091df70"],
+  ["68ea1a166e56d8ba90e71c6b90bc2d3d6c4779af", "3063419016bbfe52f814933fd460d42f2696f367"],
+  ["4dec201c432106719112b4a110a79c42d2a7bffc", "2cd1373099206af4a9bd10d6eed681551797f402"],
+  ["e0f72b412f9d3a5d8536305d1a31c690f1b3f512", "893ec1c209fdd6322e8bcbd406671df23c2688c6"],
+  ["1d825005f9099b8f7f58925a2929a6d3f8fff9ef", "b13219c62839436821b9e624ec25a818f16a5965"],
+  ["881bd77b4a4a5c5284830bef1cd1be0ffca28bc4", "984e8953ff3ad16fd317b4fea7b58cb6fd4f0b1f"],
+  ["736f58b8b9d9bca4d79bbe32b616f4b6b7903ee7", "15b9b6a35cd1f52edec581fa53e3678d9322ef70"],
+  ["d549d26a302bbf465be59823383a948ba77f6f4d", "94ff93b174d7ed95d741954b6e70e35eb36895fd"],
+  ["2d7654115be8188c69146301ad5c75f72a815803", "9d1cf0ab6bc787cc64c53c392cea560025c7b601"]
+ ]
+}
