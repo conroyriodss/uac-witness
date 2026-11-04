@@ -11,6 +11,7 @@ This repository publishes records of SHA-256 digests, byte counts, and seal-log 
 |[0001](records/0001-pre-amendment-baseline.json)|Baseline before the recorded seal-log amendment.|
 |[0002](records/0002-post-amendment-lines-29-31.json)|State after the recorded amendment of seal-log lines 29–31.|
 |[0003](records/0003-correction-pcc-history-rewrite.json)|Correction: the single sanctioned history rewrite of uac-nitrd (2026-11-04), which removed the non-public PCC column from the FY2025 fixture. Gives the superseded and corrected fixture hashes and the full old→new commit map (43 commits plus the moved `uac-nitrd-freeze-v1` tag). It has no `files` mapping or seal-log summary.|
+|[0004](records/0004-task1-preregistration-freeze.json)|Freeze: the Task 1 pre-registration (`task1-prereg-v1-2026-11-04T18:00:50Z`), with its SHA-256 and commit, the FY2024 freeze-run ranking, the FY2026 forecast and the zero-count check that was in force at the freeze.|
 
 Each state record (0001, 0002) contains an event description and recorded UTC time; a `files` mapping of logical artifact names to byte counts and SHA-256 digests; a seal-log summary; and a witness identifier. Logical artifact paths refer to the source environment, not necessarily files in this repository.
 
