@@ -1,0 +1,45 @@
+{
+ "witness_id": "seal-witness-v1-2026-10-25",
+ "record": "0008",
+ "kind": "correction (two integrity defects in the 0006 round)",
+ "at_utc": "2026-11-05T22:12:00+00:00",
+ "at_utc_meaning": "Time this record's content was written, before its commit; the commit time is in git.",
+ "precedent": "records/0003-correction-pcc-history-rewrite.json: a correction is a new record and the earlier record's bytes are preserved.",
+ "correction_1_record_0006_at_utc": {
+  "record": "records/0006-task1-fy2026-forecast-bias-prediction.json",
+  "record_sha256": "db637e8364abf8f4fe288709369e03bb77fac7fd3a298be752c05e7a193b4969",
+  "declared_at_utc": "2026-11-05T22:05:00+00:00",
+  "actual_commit_utc": "2026-11-05T22:02:45Z (uac-witness commit 49627551133adf0a7b106803c82153e9efebc3da, committer date)",
+  "difference": "The declared time is 2 min 15 s AFTER the commit, so the record was forward-dated relative to its own commit.",
+  "cause": "I wrote at_utc as an estimate of the commit time before committing, and did not replace it with an observed time.",
+  "materiality": "Immaterial to the prediction. FY2026 category-329 was 0 at 22:00:11Z (quoted in 0006), 22:02:44Z and 22:02:47Z, and both times are long before any reveal. The prediction's content, quantity and range are unaffected.",
+  "corrected_reading": "Read 0006 as committed at 2026-11-05T22:02:45Z. Its content was written between the 22:00:11Z check and that commit.",
+  "why_new_record_not_edit": "Editing 0006 would change its bytes and its sha256 (db637e83...), which have been published and cited. The README's rule is to preserve original JSON bytes and add a new numbered record. An edit would make the chain unverifiable for anyone holding the old hash.",
+  "practice_change": "From record 0007 on, at_utc is an observed time taken before the record is written (0007: the zero-count check at 22:09:04Z), never later than the commit."
+ },
+ "correction_2_zero_count_log_write_method": {
+  "file": "/Volumes/users/conroyri/nitrd_hackathon_v1_raw/_progress/fy2026_cat329_zero_count_log.jsonl (Unity Catalog volume; outside git)",
+  "disclosure": "This log is described as append-only, but it is rewritten with its existing bytes preserved, not truly appended. Opening the file for append on the UC volume (FUSE mount) fails with 'OSError: [Errno 29] Illegal seek'. Each update reads the whole file and writes it back as old bytes plus new lines, then checks that the old bytes are an unchanged prefix.",
+  "rewrite_1": {
+   "utc": "2026-11-05T22:03Z (after witness 0006)",
+   "before": {"lines": 2, "sha256": "8260b137653afe331e43cc973e5ee3c986fcca0b47ec7bec6f530e361d9f1717", "note": "hash of the whole 2-line file, observed just before the rewrite"},
+   "after": {"lines": 4},
+   "verification": "Checked at 2026-11-05T22:11Z: the first 2 lines of the 4-line file (327 bytes) hash to 8260b137...f1717, the same as the whole pre-rewrite file, so the two pre-existing lines are byte-identical.",
+   "defect_in_lines_3_4": "Line 3 (22:02:44Z) has nih_fy2026_total null because that check did not query the NIH total. Neither line 3 nor line 4 recorded the write method."
+  },
+  "rewrite_2": {
+   "utc": "2026-11-05T22:11Z",
+   "before": {"lines": 4, "bytes": 947, "sha256": "61ef1408c1685078391f6d2ced99ad87e94b6f8c1f25011b03fe360830c0c7ca"},
+   "after": {"lines": 7, "sha256": "7a32286ba87c7273295893fc5efe5cb7602b5297e8ad9e40c18d0dfe665f6688"},
+   "added": "the three record-0007 checks: 22:09:04Z, 22:10:02Z, 22:10:04Z, all cat329 0; each line carries write_method",
+   "verification": "The first 947 bytes of the new file are byte-identical to the old file (sha256 61ef1408...)."
+  },
+  "append_only_alternatives": "The UC volume path cannot be appended. A genuinely append-only store would be a Delta table with delta.appendOnly = true, which rejects UPDATE and DELETE, or a git-tracked log with fast-forward-only pushes, whose history is append-only and externally timestamped by GitHub. Neither is set up. Until one is, this file's integrity rests on the prefix-hash checks recorded here.",
+  "scheduled_writer": "The daily scheduled check (task id 5e7c98c8a53f46e8aebc66407ceafbfc) also writes to this file. I have not inspected how it writes, so I do not claim it appends."
+ },
+ "refs": {
+  "corrects": "records/0006-task1-fy2026-forecast-bias-prediction.json",
+  "previous_witness_record": "records/0007-task1-tier1c-denominator-clarification.json",
+  "record_0007_commit": "5f6ca4cae3a1b426d9a74ef82a532406db7a53c1 (2026-11-05T22:10:02Z), sha256 20add745...3f14"
+ }
+}
