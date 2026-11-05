@@ -1,0 +1,46 @@
+{
+ "witness_id": "seal-witness-v1-2026-10-25",
+ "record": "0007",
+ "kind": "clarification (owner decision, after the freeze): Tier 1c scoring denominator",
+ "at_utc": "2026-11-05T22:09:04+00:00",
+ "at_utc_meaning": "Time of the FY2026 category-329 zero-count check run just before this record was written. The record was committed after this time; the commit time is in git.",
+ "status_statement": "A clarification made after the freeze and before any FY2026 category-329 record is public. The frozen pre-registration left this ambiguity open. It is NOT what the pre-registration always said. It does not amend, reopen or re-hash the frozen pre-registration.",
+ "decided_by": "owner (2026-11-05), in writing in the working session; committed on the owner's authorization",
+ "preregistration_unchanged": {
+  "id": "task1-prereg-v1-2026-11-04T18:00:50Z",
+  "sha256": "c770a502777725545f9cff5130e329fe83bb003c39f3c11f61beb0e0259a0280",
+  "commit": "8409dc3 (2026-11-04T18:03:05Z)",
+  "witness": "records/0004-task1-preregistration-freeze.json",
+  "rehash_before": "c770a502777725545f9cff5130e329fe83bb003c39f3c11f61beb0e0259a0280 at uac-nitrd 7bc428a, just before this record"
+ },
+ "the_ambiguity": {
+  "clauses_quoted_verbatim": {
+   "section_6_item_11": "FY2026 count forecast (Tier 1c): (1 - u2021) x r2021 x sum of scores over the FY2026 universe snapshot, with u2021 = FY2021 uncategorized share and r2021 = FY2021 NITRD count / sum of FY2021 out-of-fold scores over categorized awards. Reported with its error against the filtered FY2026 count at reveal.",
+   "section_3_item_6": "FY2026 universe = the frozen snapshot fetched 2026-11-03 (`task1-text-fetch-v1`, identity + text, no label field), filtered as above. Awards RePORTER adds after the snapshot are reported separately at reveal and are not in the Tier 1 metrics.",
+   "section_1_tier_table_row_1c": "| 1c | FY2026 count forecast: the filtered NITRD count under the reconstructed universe | substantially blind (see 7.4) | reported next to Tier 1, not tested |",
+   "section_7_4_context": "The FY2026 count forecast predicts the filtered count under the reconstructed universe, a different quantity from the unfiltered glimpse, and is reported as substantially blind, with the glimpse listed in the exposure ledger as context, not as an anchor."
+  },
+  "why_arguable_either_way": "Section 6 item 11 sums the forecast over the snapshot but compares it only with 'the filtered FY2026 count at reveal', without saying whether that count is limited to the snapshot's awards. Section 3 item 6 keeps post-snapshot awards out of 'the Tier 1 metrics', but the tier table lists 1c as its own tier, 'reported next to Tier 1, not tested', so that exclusion may not reach it. The pre-registration also never names appl_id as the snapshot's identity key. A reader could take either the snapshot or the final published universe as the denominator."
+ },
+ "decision": {
+  "primary": "S = the number of appl_ids among the 56,508 rows of uac-nitrd build/task1_forecast_fy2026/forecast.csv.gz (sha256 b0b42f78a6041425395625c39f4062bc728c29c3658f8df63c31919ac23bca2a) that public RePORTER lists under spending category 329 at the single Tier 1 fetch (pre-registration section 8 step 4). The identity key is appl_id as present in that file. Tier 1c error = (3325.7 - S) / S.",
+  "secondary_reported_not_scored": "The full filtered FY2026 count at reveal over the complete universe as then published (task1-universe-qvr-recon-v1), with the count of universe awards RePORTER added after the 2026-11-03 snapshot, so the two numbers can be reconciled. No prediction is attached to this figure.",
+  "rationale": "The forecast is a sum of scores over the snapshot. Scoring it against a different population would measure snapshot incompleteness, not model bias, and mix the two. Witness 0006's bias prediction is calibrated on the FY2022-25 backtest errors, and every one of those was computed with forecast and count on the same award set. Snapshot scoring is the only basis on which they are comparable."
+ },
+ "material_consequence": "The snapshot holds 56,508 universe awards. The universe was 63,074 for FY2021 (pre-registration section 3 item 7) and 64,065 for FY2024 (freeze-run ranking, pre-registration section 9). Scored against a full final universe of that size, the forecast would be off by roughly 10-12% (1 - 56,508/63,074 = 10.4%; 1 - 56,508/64,065 = 11.8%) from the missing awards alone, before any model bias.",
+ "relation_to_record_0006": "Record 0006's secondary prediction already defined its scored quantity S the same way, but only for that prediction. This record makes S the primary Tier 1c scoring quantity.",
+ "fy2026_zero_count_check": {
+  "checked_utc": "2026-11-05T22:09:04Z",
+  "cat329_total": 0,
+  "nih_fy2026_total": 67665,
+  "method": "public RePORTER API v2 projects/search: fiscal_years [2026] with spending_categories [329], meta.total; NIH FY2026 total as a liveness check",
+  "significance": "No FY2026 category-329 record was public when this choice was made, so no reveal data could have informed it. A post-freeze clarification is legitimate only on that condition. The check is repeated at the commit; see the commit message and the next record."
+ },
+ "ci": {
+  "uac-nitrd_head": "7bc428aa6233b4ce561670d6fe4e289506f373c4",
+  "check": "sweep | completed | success | 2026-11-05T17:47:03Z | https://github.com/conroyriodss/uac-nitrd/actions/runs/42075903392/job/127415888980"
+ },
+ "refs": {
+  "previous_witness_record": "records/0006-task1-fy2026-forecast-bias-prediction.json"
+ }
+}
