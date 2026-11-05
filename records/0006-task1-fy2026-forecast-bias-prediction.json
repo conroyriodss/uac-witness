@@ -1,0 +1,68 @@
+{
+ "witness_id": "seal-witness-v1-2026-10-25",
+ "record": "0006",
+ "kind": "secondary prediction (NOT pre-registered): direction and rough magnitude of the FY2026 count-forecast error",
+ "at_utc": "2026-11-05T22:05:00+00:00",
+ "status_statement": "A commitment made on 2026-11-05. It is estimated from the EXPOSED years FY2022-FY2025 and so is NOT part of the frozen plan. It is a secondary prediction about the forecast's own bias, not a pre-registered primary or secondary endpoint. It does not amend, reopen or re-hash the frozen pre-registration, which stays as recorded in witness 0004.",
+ "preregistration_unchanged": {
+  "id": "task1-prereg-v1-2026-11-04T18:00:50Z",
+  "sha256": "c770a502777725545f9cff5130e329fe83bb003c39f3c11f61beb0e0259a0280",
+  "witness": "records/0004-task1-preregistration-freeze.json",
+  "note": "sha256 of docs/TASK1_PREREGISTRATION.md re-computed at uac-nitrd 7bc428a just before this record: c770a502..., unchanged."
+ },
+ "forecast_under_test": {
+  "id": "task1-forecast-fy2026-v1",
+  "value": 3325.7,
+  "value_rounded": 3326,
+  "universe_awards": 56508,
+  "forecast_prevalence": 0.05885,
+  "files": {
+   "uac-nitrd/build/task1_forecast_fy2026/forecast.csv.gz": {"sha256": "b0b42f78a6041425395625c39f4062bc728c29c3658f8df63c31919ac23bca2a", "rows": 56508},
+   "uac-nitrd/build/task1_forecast_fy2026/forecast_summary.json": {"sha256": "4ecb98bde969bf6830174212e49d04962d6cb83ecc0299f49ff0e5b4292ff4b1"}
+  }
+ },
+ "basis_exposed_years": {
+  "source": "uac-nitrd build/task1_backtest_vs_reported_v1/report.json (sha256 68b665c15dcbc78cca28467a1a815dd3acd23be7d46aab748e0633efdf22115b, commit 66bf210); docs/PERFORMANCE_VS_REPORTED.md",
+  "error_definition": "error_pct = 100 x (forecast - reported) / reported, with forecast and reported on the same filtered universe of that year",
+  "errors_pct": {"2022": 9.31, "2023": 4.22, "2024": -1.47, "2025": -4.69},
+  "reported_prevalence": {"2021": 0.0432, "2022": 0.0484, "2023": 0.0521, "2024": 0.0556, "2025": 0.0606},
+  "exposure": "FY2022, FY2023 and FY2025 are exposed (burned). The FY2024 point is the blind Tier 2 year, taken from the committed report with no key re-read. All four were seen before this prediction.",
+  "mechanism": "The forecast uses fixed FY2021 constants (u2021 = 0.0735, r2021 = 1.230). It follows the text but not the year-on-year rise in reported NITRD prevalence, so its error has fallen about 4.8 points a year."
+ },
+ "prediction": {
+  "direction": "LOW: the forecast 3,325.7 will be below the scored count S, i.e. error_pct < 0",
+  "magnitude_range_pct": [-13.0, -2.0],
+  "magnitude_range_as_count_S": [3394, 3822],
+  "central_pct": -9.0,
+  "central_as_count_S": 3655,
+  "derivation": {
+   "linear_trend_in_error": "Least-squares line through the four errors, extrapolated one year: -10.1%.",
+   "prevalence_trend": "Reported prevalence rose 4.32% -> 6.06% over FY2021-25 (about +0.43 points a year), giving about 6.50% for FY2026 and an error of 5.885/6.495 - 1 = -9.4%.",
+   "flat_prevalence_bound": "If FY2026 prevalence stays at FY2025's 6.06%, the error is 5.885/6.06 - 1 = -2.9%; the -2% end of the range allows for that.",
+   "wide_end": "-13% allows for the year-on-year rise accelerating."
+  }
+ },
+ "scored_quantity": {
+  "S": "The number of appl_ids among the 56,508 rows of forecast.csv.gz (sha256 b0b42f78...) that public RePORTER lists with spending category 329 at the Tier 1 fetch. That fetch is pre-registration section 8 step 4, made once FY2026 category-329 records are public. Same appl_ids, same universe rule (task1-universe-qvr-recon-v1), same denominator the forecast summed over.",
+  "why_this_denominator": "The FY2022-25 errors this prediction rests on were measured with forecast and count on the same set of awards, so the bias claim is only comparable on the same awards. Awards RePORTER adds after the 2026-11-03 snapshot change the count, not the model's bias.",
+  "scoring": "direction_hit = (S > 3325.7). magnitude_hit = (-13.0 <= 100 x (3325.7 - S) / S <= -2.0). Both are reported once, at the Tier 1 reveal, whatever they show.",
+  "also_reported_not_scored": "The error against the full final filtered FY2026 universe count, including post-snapshot awards. No magnitude is predicted for it.",
+  "relation_to_preregistration": "This defines S only for this secondary prediction. It does not settle which denominator pre-registration Tier 1c (section 6 item 11) is scored against; that is an open gap for the owner to close in writing before any FY2026 category-329 record is public."
+ },
+ "fy2026_zero_count_check": {
+  "checked_utc": "2026-11-05T22:00:11Z",
+  "cat329_total": 0,
+  "nih_fy2026_total": 67665,
+  "method": "public RePORTER API v2 projects/search, fiscal_years [2026], spending_categories [329] (meta.total); NIH FY2026 total as a liveness check",
+  "note": "Re-checked after this record was committed; see the commit message and _progress/fy2026_cat329_zero_count_log.jsonl."
+ },
+ "ci": {
+  "uac-nitrd_head": "7bc428a",
+  "check": "sweep | completed | success | 2026-11-05T17:47:03Z | https://github.com/conroyriodss/uac-nitrd/actions/runs/42075903392/job/127415888980",
+  "uac-witness": "no CI configured (0 check runs on 7f6c81e)"
+ },
+ "refs": {
+  "uac-nitrd_main": "7bc428a",
+  "previous_witness_record": "records/0005-task1-tier2-fy2024-reveal.json"
+ }
+}
