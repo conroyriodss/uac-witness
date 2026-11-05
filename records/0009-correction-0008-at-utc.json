@@ -1,0 +1,17 @@
+{
+ "witness_id": "seal-witness-v1-2026-10-25",
+ "record": "0009",
+ "kind": "correction (record 0008 at_utc)",
+ "at_utc": "2026-11-05T22:11:51+00:00",
+ "at_utc_meaning": "Observed with `date -u` just before this record was written; the commit time is in git and will be later.",
+ "record": "records/0008-correction-0006-at-utc-and-zero-count-log-method.json",
+ "record_sha256": "bc2b73495f37a75f2e5be1da54f4ecd8f6f79ca35d11cf71c2d32b70c8f12c02",
+ "declared_at_utc": "2026-11-05T22:12:00+00:00",
+ "actual_commit_utc": "2026-11-05T22:11:31Z (uac-witness commit 2681399d68c44d447eb099609ba69024ad785313, committer date)",
+ "difference": "The declared time is 29 s AFTER the commit. Record 0008 repeated the defect it was correcting: its at_utc was an estimate, not an observed time, despite 0008's own stated practice change.",
+ "materiality": "Immaterial: 0008 is a correction and disclosure record with no prediction. FY2026 category-329 was 0 at 22:10:04Z, the last check before it.",
+ "corrected_reading": "Read 0008 as committed at 2026-11-05T22:11:31Z.",
+ "why_new_record_not_edit": "Same reason as 0008: preserve the published bytes and hash (bc2b7349...).",
+ "practice": "Each at_utc from here on is the output of `date -u` taken before the record is written, and is checked to be no later than the commit time before pushing.",
+ "refs": {"corrects": "records/0008-correction-0006-at-utc-and-zero-count-log-method.json"}
+}
