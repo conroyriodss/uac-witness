@@ -39,6 +39,9 @@ The `at\_utc` field is a recorded assertion. Git commit dates alone are not inde
   * The chain caught its own clerical error with new records, leaving the published bytes and hashes of 0006 and 0008 unchanged.
 * **Practice now.** `at_utc` is copied from an observed `date -u` taken before the record is written. Before push, it is checked to be no later than the commit time.
 * **No more records for this class.** Any further defect of this kind is batched and reported to the owner, not given its own correction record.
+* **0009 is also malformed.** It has the key `"record"` twice: first `"0009"`, then the path of record 0008. A JSON parser keeps the second, so it reads 0009's record number as the path of the record it corrects. The intended record number is the filename prefix, 0009. The published bytes are kept.
+  * `tests/test_records.py`, run in CI on every push, closes this class. Every record must be valid JSON with unique keys at every depth, its `record` field must equal its filename number, and the numbering must have no gaps.
+  * The legacy state records 0001-0002 have no `record` field. 0009 is the only listed defect, and the list cannot grow.
 
 ## Verification route
 
