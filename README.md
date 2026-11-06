@@ -28,6 +28,18 @@ These comparisons do not establish the truth of an artifact’s contents, that a
 
 The `at\_utc` field is a recorded assertion. Git commit dates alone are not independent proof of publication time. Assess ordering using retained GitHub/server records and the broader protocol evidence where available.
 
+**Timestamps, and the 0006 -> 0008 -> 0009 sequence.**
+
+* **Which times count.** The git commit and the GitHub push record are the authoritative timestamps for a record. Of the two, the push record is server-side; the commit date can be set by the author. `at_utc` only records when the content was drafted.
+* **The clerical error, and how it was caught.**
+  * Record 0006 declared an `at_utc` of 22:05:00, but its commit landed at 22:02:45. The time was an estimate typed into the record, not an observed one, so it post-dated the commit.
+  * Record 0008 corrected it, and then repeated the same error: it declared 22:12:00 against a commit at 22:11:31.
+  * Record 0009 corrected that.
+  * Both errors are immaterial. Neither record's content depends on its time, and the commit and push times of both are intact.
+  * The chain caught its own clerical error with new records, leaving the published bytes and hashes of 0006 and 0008 unchanged.
+* **Practice now.** `at_utc` is copied from an observed `date -u` taken before the record is written. Before push, it is checked to be no later than the commit time.
+* **No more records for this class.** Any further defect of this kind is batched and reported to the owner, not given its own correction record.
+
 ## Verification route
 
 1. Choose the event and pin this repository to the commit containing the applicable record.
